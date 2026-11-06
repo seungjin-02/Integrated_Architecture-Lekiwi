@@ -1,0 +1,24 @@
+# Normalize extension text, preserve pinned upstream blobs exactly.
+* text=auto eol=lf
+
+# Imported source is byte-for-byte evidence; retain its original whitespace.
+lekiwi_ws/src/lekiwi*/** -text -whitespace
+lekiwi_ws/src/docs/** -text -whitespace
+lekiwi_ws/README.md -text -whitespace
+lekiwi_ws/.gitignore -text -whitespace
+lekiwi_web_operator/lekiwi_web_operator/** -text -whitespace
+lekiwi_web_operator/docs/** -text -whitespace
+lekiwi_web_operator/web/css/** -text -whitespace
+lekiwi_web_operator/web/js/** -text -whitespace
+lekiwi_web_operator/web/index.html -text -whitespace
+lekiwi_web_operator/web/favicon.svg -text -whitespace
+lekiwi_web_operator/.gitignore -text -whitespace
+lekiwi_web_operator/README.md -text -whitespace
+lekiwi_web_operator/deploy_to_robot.sh -text -whitespace
+lekiwi_web_operator/run_web_operator.sh -text -whitespace
+lekiwi_web_operator/lekiwi-web-operator.service -text -whitespace
+
+# Preserve copied font licenses without rewriting their legal text.
+lekiwi_web_operator/web/monitor/fonts/Geist-OFL.txt whitespace=-trailing-space
+lekiwi_web_operator/web/monitor/fonts/GeistMono-OFL.txt whitespace=-trailing-space
+lekiwi_web_operator/web/monitor/fonts/Pretendard-LICENSE.txt whitespace=-trailing-space

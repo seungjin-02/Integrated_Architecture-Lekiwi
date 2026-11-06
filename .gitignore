@@ -15,3 +15,8 @@ recordings/
 lekiwi-recordings/
 datasets/
 connection-card/
+.ruff_cache/
+.pytest_cache/
+.state/
+site/downloads/*.zip
+site/downloads/*.sha256

@@ -60,7 +60,7 @@ def main(argv: list[str] | None = None) -> int:
 		robot.shutdown()  # 어떤 길로 끝나든 정지 · 토크 끔 · 웹에서 켠 launch 종료
 
 
-def _serve(robot: RobotService, args: argparse.Namespace, stop_event: threading.Event) -> int:
+def _serve(robot: RobotService, args: argparse.Namespace, stop_event: threading.Event, *, request_handler=None) -> int:
 	try:
 		robot.start()
 	except RuntimeError as error:
@@ -69,7 +69,8 @@ def _serve(robot: RobotService, args: argparse.Namespace, stop_event: threading.
 	network = NetworkService(args.port)
 	hub = Hub(robot, SystemInfo(), network)
 	try:
-		server = OperatorHttpServer((args.host, args.port), hub, robot, network)
+		options = {} if request_handler is None else {"request_handler": request_handler}
+		server = OperatorHttpServer((args.host, args.port), hub, robot, network, **options)
 	except (OSError, OverflowError) as error:
 		print(f'주소를 열지 못했습니다 ({args.host}:{args.port}): {error}', file=sys.stderr)
 		return 1

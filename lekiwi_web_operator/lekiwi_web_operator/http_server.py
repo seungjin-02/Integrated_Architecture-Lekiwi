@@ -431,6 +431,7 @@ class OperatorHttpServer(ThreadingHTTPServer):
 		hub: Hub,
 		robot: RobotApi,
 		network: NetworkService,
+		*, request_handler: type[BaseHTTPRequestHandler] = OperatorRequestHandler,
 	) -> None:
 		self.hub = hub
 		self.robot = robot
@@ -438,7 +439,7 @@ class OperatorHttpServer(ThreadingHTTPServer):
 		self._count_lock = threading.Lock()
 		self._ip_counts: dict[str, int] = {}     # 열려 있는 연결 수 (IP 마다)
 		self._refused_log_time = -math.inf      # serve_forever 스레드만 쓴다
-		super().__init__(address, OperatorRequestHandler)
+		super().__init__(address, request_handler)
 
 	def process_request(
 		self, request: socket.socket, client_address: tuple[str, int],
