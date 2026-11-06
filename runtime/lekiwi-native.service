@@ -1,0 +1,15 @@
+[Unit]
+Description=LeKiwi single Native engine with observation
+After=network.target
+
+[Service]
+WorkingDirectory=%h/lekiwi/lekiwi_web_operator
+EnvironmentFile=%h/.config/lekiwi/native.env
+ExecStart=/bin/bash %h/lekiwi/runtime/native.sh
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=30
+KillMode=control-group
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=LeKiwi independent event collector
+After=network.target
+
+[Service]
+WorkingDirectory=%h/lekiwi/lekiwi_web_operator
+EnvironmentFile=%h/.config/lekiwi/native.env
+ExecStart=/usr/bin/python3 -m observability.server --data-dir %h/.local/share/lekiwi/events
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target

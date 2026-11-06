@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XLeRobot 로그 운영 시스템</title><link rel="stylesheet" href="/monitor/monitor.css">
+<script type="module" src="/monitor/monitor.js"></script></head>
+<body>
+<nav class="monitor-modes" aria-label="로그 데이터 선택">
+  <div class="reading-views" role="group" aria-label="데이터 모드">
+    <button id="liveMode" type="button" aria-pressed="true">원본 이벤트 · LIVE</button>
+    <button id="demoMode" type="button" aria-pressed="false">Alert 데모 · DEMO</button>
+  </div>
+  <span id="modeNote" class="small">실제 수집 원본 · CORE 미연결</span>
+</nav>
+<div id="demoBanner" class="demo-banner" hidden>시연용 데이터 / 실제 로봇 상태 아님</div>
+<div id="rawApp"></div><div id="app" hidden></div>
+</body></html>

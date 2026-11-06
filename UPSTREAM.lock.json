@@ -1570,5 +1570,15 @@
       "sha256": "c6cc5d3c3936d34eb03d9dd9c6f3e6cc6f8d50b78b8391fcf9dd0bc93e9ee887",
       "mode": "100644"
     }
+  },
+  "integration_overrides": {
+    "lekiwi_web_operator/lekiwi_web_operator/__main__.py": {
+      "sha256": "068bd83f0f3f70afc11002fb4cc84680740f64f73abd0691d16a7bbacc314e9e",
+      "reason": "Optional request handler injection; default native behavior retained"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/http_server.py": {
+      "sha256": "519df24eb2192c91f03c85c89e46467be70ac9b00785dd71338facfd6a73795b",
+      "reason": "Optional request handler injection; default native behavior retained"
+    }
   }
 }

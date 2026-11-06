@@ -1,0 +1,4 @@
+{
+  "camera_channels": {"top": "front", "left_wrist": "wrist", "right_wrist": null},
+  "device_profile": {"device_paths": {}}
+}
