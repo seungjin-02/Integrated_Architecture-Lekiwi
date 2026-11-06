@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+build/
+install/
+log/
+private/
+.playwright-cli/
+.env
+*.key
+*.pem
+config.json
+recordings/
+lekiwi-recordings/
+datasets/
+connection-card/
