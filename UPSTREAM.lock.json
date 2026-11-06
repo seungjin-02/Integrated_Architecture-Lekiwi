@@ -1,0 +1,1574 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "directory": "lekiwi_web_operator",
+      "repository": "https://github.com/roboseasy/lekiwi_web_operator",
+      "commit": "48f298c71dd54277e8086a58300703ffee1dbb8e",
+      "files": 73
+    },
+    {
+      "directory": "lekiwi_ws",
+      "repository": "https://github.com/roboseasy/lekiwi_ws",
+      "commit": "7ea3da19dee975c34907677f40e823c256fbefdb",
+      "files": 238
+    }
+  ],
+  "files": {
+    "lekiwi_web_operator/.gitignore": {
+      "git_blob": "a5c59c16e860a5637124494c834c8d21cd649ab0",
+      "sha256": "95fbcf7ec44c5cbe4320c783b0443902215f8f334ae42188ee63cfacced18bdb",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/README.md": {
+      "git_blob": "b1393c0e4133fa7c602f5f58b310cfc1d3633330",
+      "sha256": "9ddf4f35c491a391b339f9ad41a44dd9bacf270cec646c7105f46fb9c0f5349a",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/deploy_to_robot.sh": {
+      "git_blob": "03c95b80888c74fdf593b6a1c80719b5eaaeabed",
+      "sha256": "024cb26e96628e3113982d26c0981541b14f6ae984a1b4d804e243c21de295e9",
+      "mode": "100755"
+    },
+    "lekiwi_web_operator/docs/images/dashboard.png": {
+      "git_blob": "a11ed719071943d8a6534cfd121587725b798f7b",
+      "sha256": "2755122a58163da8acf8817e3f50cf62c43d33ab3faa362e98e6128a420621e3",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/drive.png": {
+      "git_blob": "f06cc852dead9263cd5fea78ed75f43aabce4523",
+      "sha256": "f5507ac771858314b4cb7747276e80790295a7a31e3b4a74960e9ea8832a460d",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/navigation.png": {
+      "git_blob": "6351aeda225a1db82c4c5f4e15c1b5b55c56bf79",
+      "sha256": "963adca67bca2ac4b40a99e81396d44a41b861bf1163864cc1457893efe24a27",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/dark_dashboard.png": {
+      "git_blob": "b5aeea209c81c3f60c645d2a3bf93e1161bcbf44",
+      "sha256": "cfa8b6ea636a91738ad03cd7eb092fdc9ee1f5889c1a53a1d4459da3b18717b7",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/dashboard_off.png": {
+      "git_blob": "af2da1ec943c7eb4767b05a03cefff04018d3b8d",
+      "sha256": "f470f5f66cc351e9c9373026d2d0dd89247efcc88f0d305b86c708595975e46c",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/dashboard_on.png": {
+      "git_blob": "7446f22b0b4253728ee0953e6d38837d21c708f2",
+      "sha256": "afa2aa651cd613be75717d82bf0c344f903e89328469cf2a7ef967250bcdc36b",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/dashboard_on_full.png": {
+      "git_blob": "dfa0717b131730d41e90209037917d499251a02d",
+      "sha256": "af97bc5da7a5d21d5fe481aff755f5059fc544fa5cf62b72948979e1d2a727f5",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/dashboard_real_viewer.png": {
+      "git_blob": "a0a278ca0edb818f486b93d7a9f94db0d6bbc9ad",
+      "sha256": "654977eb22a8a1ce76615cc02ae34665d9221e4902b7f58f9e06594573d279e8",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/dialog_mapping_stop.png": {
+      "git_blob": "5b547b1a05c4d13b039aeacc40ac44de8d371dca",
+      "sha256": "a8976aba9dce0c4c159686ad870b6a7f3cf9e0c41cd10dbf0bdc0caa574ffbb1",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/dialog_power.png": {
+      "git_blob": "2f70d7cab768e0feb7719865fe01db7cf4d5176b",
+      "sha256": "dc3e16d0b56f79da7119beaa3ea01e9d2a3d15f1289ec3c58d4a4ac8a7b7a91f",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/disconnected.png": {
+      "git_blob": "785f22b46d2ad7ae1393e4952690427082af6fd1",
+      "sha256": "3dc499cb9774fab6f372ccd6701f34f34f69c18857e956f9808f54066cc119f7",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/drive_driving.png": {
+      "git_blob": "9f301039fc27f142fb0883d66846cea6c0bf808f",
+      "sha256": "2f4599c7fa783b54f4ede64ab5cf90f2100561dd0147436aa0b12b2525554113",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/drive_no_control.png": {
+      "git_blob": "fd07a1a711383d23aee40d334bd05d77eddbba79",
+      "sha256": "2e823e289cf67d93eb063d6cd97967c6b21fdad389861b2b6e0d8d4cc544b0c4",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/estop_latched.png": {
+      "git_blob": "ed8982844fb470fd6b1fe53f0c4c285abb53d9f9",
+      "sha256": "2409f253bf5135913b01e100f88102d18bb583e628b0dd4d1a2a70c02a07a02e",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/logs.png": {
+      "git_blob": "42ef46318148b3f212c6b14bf01fdb9aab066316",
+      "sha256": "a1c76a6106502ee95e05816b577bef8814d84d3de5ab64591f9ca657f8d70209",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/mapping_explore_dialog.png": {
+      "git_blob": "54aa7c24d60736eb8a4b4713f193505d8f43cddc",
+      "sha256": "528852ee2d02c8cf33cb3c852112a032c707ed30c6540ac1b3d63e98456619e5",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/mapping_explore_done.png": {
+      "git_blob": "b0423c46a5434ee37cd10c2c2b14abe766364893",
+      "sha256": "b32f48679bec8cff878fee6719198085b4728a44aff1ad8f3beb548457066402",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/mapping_exploring.png": {
+      "git_blob": "4c07723d1994bd9e79ac3ad389a0d2eb4f1fff88",
+      "sha256": "b57d5e708d6eabb28cb211d4bbda62b117ba205fc9989c7b34847ea86ef6d19d",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/mapping_running.png": {
+      "git_blob": "33922ba19c9a2e588e60bb2001448e7d960a9926",
+      "sha256": "c5a99a4e0e92111257ad6eba529e8bd8d383246d5dbc84bfc9af71a62bc46617",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/mapping_saved.png": {
+      "git_blob": "21ea9f3954e6f322f19fec2aafdd93037343c925",
+      "sha256": "30b9ff17824b841e3f0589c51aa02324fd8542747979a99e079489aa2abb7f36",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/mobile_drive.png": {
+      "git_blob": "3488a501a8ff3efd507af75aeab89830e4393add",
+      "sha256": "da17c908a1a432037474234aa5d18673b3bed2c62e5a8d56bd15d55885cf3a8a",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/navigation_active.png": {
+      "git_blob": "e66b04eb7aa90fbac8662719a80aa3f748b000fa",
+      "sha256": "8a20032a7ca209eee2ff9d37689ab24201ca09e48bc61e8bdfb2be2cc2a97718",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/navigation_select.png": {
+      "git_blob": "245ed5a58a1a3758328b8e117df2d2b25d47ca33",
+      "sha256": "7bdba13302c3f9651db0d88d77cfc12585dd9565af3ab3addbbd91228ef5f676",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/network_real.png": {
+      "git_blob": "2bf70a8b100a4fd2ff894b9e0a0bfccde951505d",
+      "sha256": "b0f994b0553fa5ebfb1a98fac4b29360f8fa94292f0a1579ce220152bb0929e2",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/sensors.png": {
+      "git_blob": "dade6f4ae7a4aaad92d4b4d4675d31725babd6c0",
+      "sha256": "2b19a3793e7f687981f223d813aa5ce13c337039acd4a2249c5799ff45daa1c1",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/topbar.png": {
+      "git_blob": "721da062eafcb2c9cb3de768ff319b4e4cc8e5c2",
+      "sha256": "0f58fa168840b6970d1a2bb7591b8162c3879f84efe52a9371898f9ba330d9dd",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/docs/images/spec/topbar_exploring.png": {
+      "git_blob": "fd3ce927ed18a7109babfc5e428b5ca1fc6fc577",
+      "sha256": "51125723e5c494bda7d56f5ef375394daf034efc67a8080579050a2dbb6459cd",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi-web-operator.service": {
+      "git_blob": "f6d1dc233ba0fdddfa8c9608a6ba8bc2e0e5ea4c",
+      "sha256": "aa540956f273a7d40498b05ea6429f4a7c8c8b4693581167ca0d731b9183244f",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/__init__.py": {
+      "git_blob": "7b3309baf3f2714b253b0cf688ee0bcfdfb6899f",
+      "sha256": "0f8ec7254f2887a0084b2679087d854fe6ea95224131c8036509e66308d59da3",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/__main__.py": {
+      "git_blob": "571786f3cef0b092c9ca88f2aad26932b3a30ef9",
+      "sha256": "337d3f2cb215e6d78debc27974127007a8b79d9b81d24dfa605768deda635b95",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/agent.py": {
+      "git_blob": "432a9cfe28eb5ff87fdd6e49181a06040ef07c7a",
+      "sha256": "4cbbe5a860c28e37a0afa0d8b4af36207d1ff796a630b123da85288101253977",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/config.py": {
+      "git_blob": "a520a73b3b9f2953756274111c641f080b2532ff",
+      "sha256": "373547bc902b93cd07dfb498316bdf65b1936e7ebd9f09c36b42914c01f18b23",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/explore.py": {
+      "git_blob": "373c975b4903e236996750d5bbd787031a2324ce",
+      "sha256": "83be49c442cdf25f57e3bc1efdb41f0e33e571137a5c7e1eb19f6f8652ba93a2",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/follower_calibration.py": {
+      "git_blob": "320a8761bf5be4d14303d4a49ece5f28e83fda52",
+      "sha256": "66ed88c041facd4415dfb55c6b6054cb2847d490789d76487323d72f35aac2ca",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/follower_calibration_worker.py": {
+      "git_blob": "db9ee4ce013a480dad63862d7d39d03465328d0b",
+      "sha256": "2657c6f2ea79ed548cd19cc843376d5f82d551111521531807701a3652ec815d",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/http_server.py": {
+      "git_blob": "bc01f7961756825878fa3ba5d77a6304ee2974e8",
+      "sha256": "c6d3bba5bf36492b7566b8a354de2c4271760f0396cbf3039a731731b727d15e",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/hub.py": {
+      "git_blob": "0a6262622c5f1e5a372edd7d752c8d3ef5144f49",
+      "sha256": "9c9e508f9c7a8fb7600b71a8a6c4cfc8e5078bdca0ed011623d2433857cbcb67",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/lerobot_calibration.py": {
+      "git_blob": "a974b0ad38584e35a33e5e7de222ff8493d26f8c",
+      "sha256": "fc7b0fed61cf0e60a30d9df1818fd9c3cb250ed871cd4e4ce79424c3a3fd2422",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/map_codec.py": {
+      "git_blob": "9eb0cf134d0fd3c2f4355bc97f2bd30ae916e736",
+      "sha256": "f3138c40492dab68a4f872a1701530a0e55d5385c37d8d397b745fbe23b94b3f",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/map_files.py": {
+      "git_blob": "3da5ddb84a928569e5d1a20d5b97832d29bea5b3",
+      "sha256": "e22b28db72a2a990022dc80c6a6fea424294d1c49694aeeb019e3e22889a0a69",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/network.py": {
+      "git_blob": "aea34d1f2a020fff10559e1c038d39457c2ae792",
+      "sha256": "e301ea60b050bf108e82e35d9768ea403bc3226da8356462114f6b4929320fd0",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/processes.py": {
+      "git_blob": "75dd703366fb39920eb12fb3f9b94f718ae0b52e",
+      "sha256": "0d9a6328ce8f2b4b2f19a0cb0e6e1bb210d10f95eff5125f02cbe75b225ccd66",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/robot.py": {
+      "git_blob": "980730ef08c55fb69166700ce54608baed99d2dd",
+      "sha256": "888dbd8b5ea4d079f5296dea8e01606013a5ee1ffc071b482f729a3c02dd3ed0",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/robot_api.py": {
+      "git_blob": "c0c023950d71dc3f9333dcbbbb75624257c6edc0",
+      "sha256": "0e7880c38c53dad73076a7cc631b2dbf1514b0ab17e78abd4877c1cccfe1c616",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/ros_node.py": {
+      "git_blob": "fe5c98ea070db6045a4ae2df0d6fec3fd1cc4fea",
+      "sha256": "daef40274cf42b23412e823b88c375814a21174cc1070daf96cf340c1aff8493",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/system_info.py": {
+      "git_blob": "1941e0b8ac2380dbf35eec8af19475e5ec5d004a",
+      "sha256": "a6919d370642e0115b3f232850eb15415aa977fad224468a110d86af3f3dcad0",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/teleop.py": {
+      "git_blob": "d1c3ca0e2d064361bd72a0145dd06ba59ea80fa3",
+      "sha256": "703328a028e8315bf802f6f742a17435ade82793fe57875beb6d160f4b46ba0a",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/tf_echo.py": {
+      "git_blob": "46f326401e98a7d6e70f095ccfdc61b9d418c7b7",
+      "sha256": "35fcf008683e4333a558c45a530a48e625fa44579a1209242c2d7266ae8bb978",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/lekiwi_web_operator/websocket.py": {
+      "git_blob": "b06745d7eea983475d271ff4b609721d7fcbd96c",
+      "sha256": "443dda5aebe54e6dd2a1fa2be54c249d73842635b20465a730096030c61aa947",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/run_web_operator.sh": {
+      "git_blob": "a45af648d2ff7fa9d6ab785240b06accdffce80f",
+      "sha256": "1d798e61c4468ad932d5c10420ff193defbe70652984b923d5e5cbcd900caa82",
+      "mode": "100755"
+    },
+    "lekiwi_web_operator/web/css/app.css": {
+      "git_blob": "583de84120d09fbf0e6f0193d365f50068eeb425",
+      "sha256": "36876c396128f809cdd2cb05b39bd16cddd287877180dadfe5fa64425ab1fcb5",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/favicon.svg": {
+      "git_blob": "7a491b19f2762f456574363368908e0d62b13bff",
+      "sha256": "a833a8ba601c829cf55a1190612d18fdd0fa1a9d5f1f9fb30e2c4b53ffe38c79",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/index.html": {
+      "git_blob": "114d5a2008cc26c334f93c39d13cf8aa72d9435d",
+      "sha256": "687511f7cb9a1977ba84cd9cff88c069e15cda72d91a0fd2d1fce1d9f22897c9",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/app.js": {
+      "git_blob": "3696d3dd0aea6002efbaeb842d96bf21f0fddb38",
+      "sha256": "7f28ec7b606042aafee823777d5f49f4d73450b7849e76063c7f29d3fcb13d00",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/arm_teleop.js": {
+      "git_blob": "e79bcce0c67f801971deb50788c4e2a18ebd27c5",
+      "sha256": "95c95802837a54adf889ca4c42f45dfc008e0e8284c1a64a052e28ede1646488",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/connection.js": {
+      "git_blob": "10ecdd7a1724d9ec5e294b7b441407e226661899",
+      "sha256": "eeaed0acc5db52072caab9ce2e913f6ff1d99a89cc88ee35c05e12f716531aa7",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/format.js": {
+      "git_blob": "53073c4ab658af7b9a29c83dfbaad743694e958b",
+      "sha256": "d2f7c450d889717e63e619c1a106562e013f2512da2bcf1240b8bcb8dd05538f",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/pages/calibration.js": {
+      "git_blob": "81230066a152f977393ca5719fe1e00dc8529764",
+      "sha256": "dfba183dac9a848ed13de1de2a9cd61cfc7077e7629439345ad455263b14ba4c",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/pages/dashboard.js": {
+      "git_blob": "0c06a61a7a6d0cfe3fe34476326a61122001b677",
+      "sha256": "dfca4e2096d6e6d1ed1c7ff603c874636cfa6536073ef228036a3d3ad1818088",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/pages/drive.js": {
+      "git_blob": "14b2500b9250a3f3c4852605c1d4d2f0a3ed2342",
+      "sha256": "4918e89c0324a416714e6b8bbe6dcf6bdcc6f81646a7e77e0982ac50944490fa",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/pages/logs.js": {
+      "git_blob": "12a07b9db88ff64e38bafa1bc0d71f2c36b5e5f6",
+      "sha256": "63cb5982916a3748bcc69ebcbf4c83630d9769b798f8d0ebbace22134bac258f",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/pages/mapping.js": {
+      "git_blob": "af44b1d14b357519d309be44e283af438ce7011d",
+      "sha256": "4c01b260f8ec6e85c7e175355d931f7fcda9d26a9f0c89f099cd55d71e54ff39",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/pages/navigation.js": {
+      "git_blob": "ef550bd73c5b60a0efbc2af166962162e8fc20f6",
+      "sha256": "aca7e11be9f8ddd96e8699f96254af98dd90c10e4ea0a0203e5066abe7a4c93d",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/pages/network.js": {
+      "git_blob": "c126caca63bae79f0d8aada70ef6cf7b9876bf20",
+      "sha256": "869d1524d3b19afebaf21f05ff3625f955a13d2a55d45b286ef577393364e705",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/pages/sensors.js": {
+      "git_blob": "2f248d47edd4c6d869b873b63bfba6e7189f8c4b",
+      "sha256": "cc0affe0abf7f17c5f14fa40df00caa351c08f334a32a4746a199c2a1af44146",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/teleop.js": {
+      "git_blob": "0c35421fdf08eecbf2887a3b71e9fb75d22a243f",
+      "sha256": "fc08b45c3b37653b6fa2140e4cdf714f0d694ab194e8df0eb6c1f8b9409237d3",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/widgets/camera_view.js": {
+      "git_blob": "d78b795d40637e098b56ff7b43ae08fe2844b723",
+      "sha256": "711c94f2ac9d91e74c0d677dee71bfd4f70a4a4e998dba42fc38d7eb3f6af3f6",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/widgets/canvas.js": {
+      "git_blob": "c312df9da6d36e34ffa72cd4e4183319fcf661c1",
+      "sha256": "3165a88f9cef89a8721919111f0cec541ff623281d839da5588e49cee3db4203",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/widgets/map_view.js": {
+      "git_blob": "59eeb4c7b70964a8bc1f0ca08ee06655df8aff32",
+      "sha256": "70b84b6c8103b4b747512567e09aba1c3d6758908b2dae556486edb71f7899a2",
+      "mode": "100644"
+    },
+    "lekiwi_web_operator/web/js/widgets/radar_view.js": {
+      "git_blob": "ab182370cc8e5421879828eac9a7ac32bdd33a71",
+      "sha256": "7fa1c00d2fc30cbaa4598bbd0c559c5aaa7691768fd2e863d4e28a3d74d71311",
+      "mode": "100644"
+    },
+    "lekiwi_ws/.gitattributes": {
+      "git_blob": "237d8a1f823758520506bfa2a812d4ee7e9d81bb",
+      "sha256": "aab09356a9b5201c4bc008e6768eef2c9ec1cbf557c9cb6e3a4a1f411d6a685f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/.gitignore": {
+      "git_blob": "1f0745c05d8909e192837792282b4ec42f6b92c9",
+      "sha256": "1c41dc6914da7101450f82d9d736644f775db1d52fdb2b8537c89a9661c6efb7",
+      "mode": "100644"
+    },
+    "lekiwi_ws/README.md": {
+      "git_blob": "e5789f7e6fa6377f7107c66d2e1090fe6a1618c8",
+      "sha256": "db9a1eaefb78c6d3de0be02d469715f53f4838a7f0d4252e38c9db36b31d2550",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/.gitignore": {
+      "git_blob": "f5b258e72e120acf00493cdccdd28dc24e918645",
+      "sha256": "4513bad4094fd14070aa735d9819a61569f74605410b3cc169dc161cd28e1e2c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/README.md": {
+      "git_blob": "393282d8cd3546d5c2fd3f89ef1f50e851efd9c3",
+      "sha256": "6cdfc7c1afa2be539fc484bad97c75f5036501a343c7bfdaf7d59bc5c987b4e0",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/THIRD_PARTY_NOTICES.md": {
+      "git_blob": "365585c18118a70ee3a9b9ede71a6e4dd0fd7622",
+      "sha256": "0b29e73eb6d67df5c3143738ceab966cb24c2e2fbe89571db6350c0d0490b362",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/camera.md": {
+      "git_blob": "2629be65f7b6363fe8c4e8ff8acf4d22d3dee19a",
+      "sha256": "9642ab20b3cad85d578016b2744cb73157d865a7e32dd0cd8c90e59ea44ee526",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/field_validation.md": {
+      "git_blob": "c413876d974c0d040cf409e015524266f491ba89",
+      "sha256": "8b757fbdfc04385665e68b16afe19be4a33b389f68299f64934781f62ff8d73e",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/front_camera_view.png": {
+      "git_blob": "04c22308a9a0fc6468a99cd8bdc08e41ed1b1a5c",
+      "sha256": "6fa1eacc95db37f073abadf69668a5c5485626dad899de69663f716e648d2f06",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/keyboard_window_no_korean_font.png": {
+      "git_blob": "e369bda419a3b100315f5134864e13ea8c19f1da",
+      "sha256": "2dd001c8acb8b89bdb1348794a32a16aa9f4c51e461c0539330ac839c57ae01d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/lekiwi_model.png": {
+      "git_blob": "a6ef600f0eb34ca645541356553e14a33d703ae4",
+      "sha256": "6e1f710ec08c5c1c254d8a0df4271e9391dc692beb500e0fc46344ea8f825ec7",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/rviz_base_view.png": {
+      "git_blob": "afd88d6f83b4f4a736743cf7d4ce2d5a47b9731e",
+      "sha256": "18f91c0098563d265aa6aa9ec781eaeacae1c2a6eb965f859d15e2301e96ffaa",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/rviz_nav2_before_initial_pose.png": {
+      "git_blob": "0d1db294f2b6913567dfefaebc40b7b95786d865",
+      "sha256": "c587eef7c399afb575174e567ce1507b5bc2c129943138aa067ea0cda36be15c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/rviz_nav2_localized.png": {
+      "git_blob": "e8cb1d20686fc73f34a0c5354e0e5862c55e4896",
+      "sha256": "1ca4e7cc9f2c63bbcde9aeccfd4fa09a1869bec07ee21cc1353c9ab1526e9763",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/rviz_nav2_navigating.png": {
+      "git_blob": "dbe21a7e7adda8a6dc4184a5ddef30c0acdf591c",
+      "sha256": "e76282107d357c03c018f0c44610c9190f9f511e6203344bdb9c1eec68887d9a",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/rviz_slam_after_driving.png": {
+      "git_blob": "6de113840380338848be01b66239503be7713303",
+      "sha256": "75351691c0967d9087fde126b550f0ab52603db1d59aaee7404456dd2100c18b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/rviz_slam_view.png": {
+      "git_blob": "bb372d0a67b4bf173aa476732a7449cac9de303a",
+      "sha256": "9f499744fe55df480adef9879e62a84c011359e48a5bfdcbfce8e3e8ea3445e4",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/images/wrist_camera_view.png": {
+      "git_blob": "e298a35f16ae61dacaf530521aa27ca142abff66",
+      "sha256": "e92c8aab18a896d31837c3ccd78aa409f3816cbb26a0de269cd033456165d871",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/docs/interfaces.md": {
+      "git_blob": "f3b7aa5867ab9837ddd7cf9272c828c1154d14b5",
+      "sha256": "0591bd4d4bbf3b25eb5c1834deac5d4d8aebcb5548649eca129eddd62d596508",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_bringup/CMakeLists.txt": {
+      "git_blob": "ef82b3d2ca74db6855e54d9422d320d3d9df41cc",
+      "sha256": "3fe3ef70770c3a83729ffe484bc6abcf53c471ffb96916c519ff22b8442d616c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_bringup/README.md": {
+      "git_blob": "133136e361cf1f073d36b3711b87769642608428",
+      "sha256": "1aa57fba7751a645a910a11486575074e2429290f710f46074ca94fa946457b1",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_bringup/config/robot_profile.yaml": {
+      "git_blob": "f24f0b023f0f7beb3bf60328e0af9e3c59f3c154",
+      "sha256": "1aae0e823bd481c0e33660f1ea51c691cf6866042254439053a1afc924d015f0",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_bringup/launch/bringup.launch.py": {
+      "git_blob": "d28bb782f22c011fedad1f2f47ec30bf7be2afc9",
+      "sha256": "dc02705d6cc45a68da349651b2583726c85aa134d4ca0ddbf81783414f628394",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_bringup/launch/rviz.launch.py": {
+      "git_blob": "489c7068cbe5aedd094cf316014d1a1959f775d7",
+      "sha256": "23f669c0d58bbcebea4bd35b45a742017d200284dc9a51d12d56e25a9e556394",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_bringup/package.xml": {
+      "git_blob": "c5fc189d57d4cb7bec0a2f6d192489949fcee74c",
+      "sha256": "3859bf8e6da38b19056cd4f62427c781fd72126f89e469181efc25ca7f28995c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_bringup/test/test_bringup_launch.py": {
+      "git_blob": "220f9911c5695641f6e64ef6ea1e3613e86c7351",
+      "sha256": "972d02e6021672ad931274fc665861a3220fb773f9939b51cdc8c44fbbca65f5",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_bringup/test/test_motor_stack_pty.py": {
+      "git_blob": "aa9c75d8fd0ace622dc7d1d74595cf766e2da1ec",
+      "sha256": "b235fceae8436d448e411a97aef9164eb3e272b78593ad5b06f3c1fc4dbc6d7c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/CMakeLists.txt": {
+      "git_blob": "75bd9d1d543b7456d79814664d0698a0c13c0a03",
+      "sha256": "db720166531950d429f94be0045a523b0cce51367ac4786ed04801787f2ee925",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/README.md": {
+      "git_blob": "354b71b233e9130bcde5a5194365f2314b876d53",
+      "sha256": "13a2690a8575e81126f6ddd49c9b23cb202a0a85f02065bef4683b7174300099",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/config/lekiwi_2d.lua": {
+      "git_blob": "528517ef7855a572649fe2f9f70a923d64f497c4",
+      "sha256": "69f55773400d51fbc6e4df16517b35e41251d6e49ceb7286bf1967a9f55de14b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/config/lekiwi_2d_imu.lua": {
+      "git_blob": "224c616b7412d766fcf2ba17ac41aabc5bb3fece",
+      "sha256": "3cbfa7a5a303fe2c2b9995808564a67ef675b40ab2349f1ec2eb345e92a44b18",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/launch/cartographer.launch.py": {
+      "git_blob": "23ddbc799f5c53739ac8fbeed94b0dffd0e88a47",
+      "sha256": "95bae43fae755c423a2313cddb278fd01620e9dc5ea2621dd28b43e9b9dbc5b5",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/launch/occupancy_grid.launch.py": {
+      "git_blob": "40ce8f0d5583a61a2bd11924af2843f2f5578a98",
+      "sha256": "793c41c0922afc9801717cbae2ee84ed9e6d8de77f1ec6a06b1000aee07a66a5",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/package.xml": {
+      "git_blob": "cf9955af6cd7cb1b20e941bd889aea85c2c9a017",
+      "sha256": "ceb909db05c0944c1459aaf9147d27dbec5c09596a123c2ec3d790c9b210b09d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/rviz/slam.rviz": {
+      "git_blob": "553e2cd0a313c48cbab3375657dfa0e11d999b16",
+      "sha256": "48d3ec962947932e614bbcb4dba2b219b066d18f631bf98cda26f311fd19618a",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/scripts/save_map.sh": {
+      "git_blob": "450f9feb43fcfc89f469e3995843eacc09c71da1",
+      "sha256": "8dc1d6e3a926a885bcf81fda82b3c48902216fe76e05fbea3705ed628530ab15",
+      "mode": "100755"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/test/test_cartographer_contract.py": {
+      "git_blob": "35b8f92027372c0bb0a01e105b53cdec01816a3c",
+      "sha256": "4ea786e3ef979e2c525f39909edf7eaa8ab1fa424a1a7ab36cbc96e080fae4a1",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_cartographer/test/test_save_map.py": {
+      "git_blob": "42ccf81c050845cf0fe8c469df36192845e70d02",
+      "sha256": "a0950d564211f417b036f7b988043cc6dd77748d22835be934ea7d636debbbd3",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/CMakeLists.txt": {
+      "git_blob": "8aa37afecdbf7597278e251cce57be4437e6dfd1",
+      "sha256": "9f5272b5e8b0fce0c2add2b6e732d81f03aa131ab07573c98acf03bff25e5a72",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/README.md": {
+      "git_blob": "6791580dd8f7190eae96b44d80fa7ad2005fbcd7",
+      "sha256": "2e602eb3a15e7e891338a501eb6c5b9fc34dbcb053f8a43d0234e21d6e6788ba",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/config/base_frame.yaml": {
+      "git_blob": "b23c7cbb58470332b90be77ee29f39766cdbfd00",
+      "sha256": "8448389410752830df4685cb5eba7fd49ffc889f553353255d59282fbbf838c3",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/config/camera_mounts.json": {
+      "git_blob": "7e93aef753f57af618934b9179cace6ba7655895",
+      "sha256": "dcb8efa8e325abb8ce1f4efb38ca839205a1e3831cd05061ee997a57c26a99fb",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/docs/FRAME_MIGRATION.md": {
+      "git_blob": "1bb425c0b6970270a11a56ecedda5026f8fbe8a5",
+      "sha256": "03dcedf250b8e76437f468c61bbf6c2734f252d7f48c08c6802e75d98d9b94d2",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/docs/IMPORT.md": {
+      "git_blob": "b467c4b48abf2c92bbe1be19ee9b4a97026e419d",
+      "sha256": "e0b7f02b0a671a6fb66103bb02186add175be83c401dc6f89d6e962af9e2a4a8",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/docs/SOURCE.md": {
+      "git_blob": "530e5f7d40e0171b7f5ef010bd0e04d687a04ff4",
+      "sha256": "44c8eb031ec93ee129c2b79618b7b284c812bd45b2d414b8ed4937e406f3857d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/docs/import_manifest.json": {
+      "git_blob": "6e9579feb85b470640076c1bc1820c4b2da254ef",
+      "sha256": "ac51c388bb707fdf07abb6cc882ad8001a22a121bfa6a25323833cc8ce550696",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/launch/display.launch.py": {
+      "git_blob": "769d284575ad0cb034cebea74be124d5701bff25",
+      "sha256": "9bd5f0e445388cb63d0c51b6a4035b1e5c338fde6dcc041097b36a8cf020cfc3",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/base/lekiwi_body_soarm_mount.stl": {
+      "git_blob": "37b95491fbd6910a1284a77f8a0a195f8c2d162b",
+      "sha256": "3bbbeb5d85772893fddff3ad98e97eb0b8fac088afa7baac7f8b26e6e9ed23a2",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/base/omni_wheel.stl": {
+      "git_blob": "0d1af9d6efec5aeb542ea673bb3f483754058c2b",
+      "sha256": "4c8e0e2b16340d3fd6738ae0077c1363c719b71ed7a54129103dddbd058b3c50",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/base_motor_holder_so101_v1.stl": {
+      "git_blob": "cac2b8dd98d3d8a6dcdf429b36aaa4b576d82041",
+      "sha256": "8cd2f241037ea377af1191fffe0dd9d9006beea6dcc48543660ed41647072424",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/base_so101_v2.stl": {
+      "git_blob": "ed10aa61d1181f8001c908ee5cae5c4f970ba417",
+      "sha256": "bb12b7026575e1f70ccc7240051f9d943553bf34e5128537de6cd86fae33924d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/motor_holder_so101_base_v1.stl": {
+      "git_blob": "9eaf67243a5ffc2dacb3fbd026b4c0620adcdd66",
+      "sha256": "31242ae6fb59d8b15c66617b88ad8e9bded62d57c35d11c0c43a70d2f4caa95b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/motor_holder_so101_wrist_v1.stl": {
+      "git_blob": "d0aa18b15a9cd63f41fa4d48e82df7a3b618c75d",
+      "sha256": "887f92e6013cb64ea3a1ab8675e92da1e0beacfd5e001f972523540545e08011",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/moving_jaw_so101_v1.stl": {
+      "git_blob": "7e8736686592072cf34c7f6e2e6e88f8a3ba60bb",
+      "sha256": "785a9dded2f474bc1d869e0d3dae398a3dcd9c0c345640040472210d2861fa9d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/rotation_pitch_so101_v1.stl": {
+      "git_blob": "5c05dee570623f62c4ab7597d76c7bdea20eacea",
+      "sha256": "9be900cc2a2bf718102841ef82ef8d2873842427648092c8ed2ca1e2ef4ffa34",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/sts3215_03a_no_horn_v1.stl": {
+      "git_blob": "2a89597702f5ec6849b6b1b894c867b35b98ca42",
+      "sha256": "75ef3781b752e4065891aea855e34dc161a38a549549cd0970cedd07eae6f887",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/sts3215_03a_v1.stl": {
+      "git_blob": "fe05403dbfac7a26822b8c8cd0fc3d5288a69fc8",
+      "sha256": "a37c871fb502483ab96c256baf457d36f2e97afc9205313d9c5ab275ef941cd0",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/under_arm_so101_v1.stl": {
+      "git_blob": "480e0583c8bb27ff9affefbebee72b784fb054c8",
+      "sha256": "d01d1f2de365651dcad9d6669e94ff87ff7652b5bb2d10752a66a456a86dbc71",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/upper_arm_so101_v1.stl": {
+      "git_blob": "9c0f9b275a51f720476e529c92193f4f69d4784c",
+      "sha256": "475056e03a17e71919b82fd88ab9a0b898ab50164f2a7943652a6b2941bb2d4f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/waveshare_mounting_plate_so101_v2.stl": {
+      "git_blob": "4dba1f22b01ab9afef2466872fcb3e1efca89e38",
+      "sha256": "e197e24005a07d01bbc06a8c42311664eaeda415bf859f68fa247884d0f1a6e9",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/wrist_roll_follower_so101_v1.stl": {
+      "git_blob": "123ce374ad3efc240e4d7022f31314e59fe4b0c0",
+      "sha256": "4b17b410a12d64ec39554abc3e8054d8a97384b2dc4a8d95a5ecb2a93670f5f4",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/meshes/soarm/wrist_roll_pitch_so101_v2.stl": {
+      "git_blob": "ac5172a35e6da3e9fdea21e25803f23cc61e31f1",
+      "sha256": "6c7ec5525b4d8b9e397a30ab4bb0037156a5d5f38a4adf2c7d943d6c56eda5ae",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/package.xml": {
+      "git_blob": "0896e0d6a562f09555e55b4b830222a43125730f",
+      "sha256": "cc2156c8fd34ded7fc4f0c8b8f52f95c73435d6fc2467d48126488e590a5eda8",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/rviz/base.rviz": {
+      "git_blob": "c004c0e316043f93e494a58fdeba87aaf97fa322",
+      "sha256": "da0c02db99055af22b06aa4ab2bb6ea99a918bebc6d6df60f2480f471e7f9bc8",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/rviz/model.rviz": {
+      "git_blob": "7d142a1af22f6cf6a692f5b2e65009c9526a147e",
+      "sha256": "401d5395f4a99a26d997320850b34ca10be7261a7851e8e18110540bc0408172",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/test/fixtures/legacy_base.urdf": {
+      "git_blob": "fd5e1ff42bc4c3e7482a5d9fd1a293dfc0fa1659",
+      "sha256": "a9ca35599bfca0914d9fdcd9560634020d880707a7ceeecb67f4606cf2ec5b90",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/test/test_base_rviz_config.py": {
+      "git_blob": "5d784a08f45a49d9f3bb4c818cd33406e95aa205",
+      "sha256": "8d7ee89fc0eac8ddbba49a366563faef9dd90f993b4ef0bfcd1753ea99285a48",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/test/test_default_model.py": {
+      "git_blob": "ae893634e06d55755aed3fff58a16895e2184585",
+      "sha256": "3cdfa45b7f4e92a1857e5b841e32e0f84518efa13aa769164f8e909f4c3cfa39",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/base_and_arm.urdf.xacro": {
+      "git_blob": "69b23daec7d77cb524ed4232105a76a21c836735",
+      "sha256": "065fb3191e1f1088c5cd69132eeb83e833e18ce952d0a806fabfb50b2949f3a0",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/cameras.xacro": {
+      "git_blob": "c8b1b6b2e6fb251a0987eeb5f8e8390d2de9ba1d",
+      "sha256": "0e0833f3abc13056492307235b44646c7e380a06f42386c2e79097b87c6c0ed6",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/hardware_sensors.xacro": {
+      "git_blob": "6464f15a511743d463d0aa089193e02abd5d2b1d",
+      "sha256": "aef324ab397e3178f931303539fa730d536726ec1db61fcdc4c1bcdbecd2d6bb",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/lekiwi.urdf.xacro": {
+      "git_blob": "7a57717d376741a25fdb2f7e20fcd337d2dd899b",
+      "sha256": "c62bcd784c900655742b4e021a2bc9e9b13fb6d59bae3cef23448193c089b4fa",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/sensors.xacro": {
+      "git_blob": "016da901c404c3083422caa620f86eac02444cbc",
+      "sha256": "883f178f46232f4d1b9ef187a54616c849a8f212c5a1552e11af8c305de077df",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/so101/end_effectors/so101_ee_common.xacro": {
+      "git_blob": "498fcc7f9da5e7b7e8c47ebf164cec14e4e51336",
+      "sha256": "026c32ec178b7ad2512f2f37ed1f73b288dee0aad6f110d800e2843828991c36",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/so101/end_effectors/so101_ee_follower.xacro": {
+      "git_blob": "1d160a5b5845e09fdc358af031322c086326e65c",
+      "sha256": "cd6e6cc90ee304ed40308d5d75e41b83ddcad40ac86013671060fffb365b9b46",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/so101/so101_arm_common.xacro": {
+      "git_blob": "c73d1a7a2244645b99824ae55fe9f01f5c72c5a6",
+      "sha256": "07b880393f46fff2f00a258112ff0b8520306262a08db0b70dd6233a129323e3",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/so101/so101_macros.xacro": {
+      "git_blob": "554670ea4ddad2db0cedfb0846632e284eb0b7f7",
+      "sha256": "cb1b5b012db93e7dcb4f7676b15b9dde0326b786a147e42d6a810a51073999e3",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_description/urdf/so101/so101_materials.xacro": {
+      "git_blob": "1c87f71a49f2d95fff0b2b6413b728a936f414e6",
+      "sha256": "29e07e4e945da5a209955a90828ea370ef4a7e7215f3623d642bd1b02b409f4e",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/README.md": {
+      "git_blob": "39ae3e9699da54fb5cc26317d5757ae8a250b24a",
+      "sha256": "6ab7796d089309f351b95d883de8a72c6d68899c770041617ef5afbba0ed4a60",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/config/follower_arm.yaml": {
+      "git_blob": "993d519252ad75b992c6252244a2fca63d9ab454",
+      "sha256": "6a01feca83056bc0466897584bca2d58fc5d80acfe97b3b4961f5c0a228a5837",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/launch/follower_arm.launch.py": {
+      "git_blob": "4abfc487098b3ac62cb6905392976b5249d748af",
+      "sha256": "beb223c78b322aec8857a18b8e90c7b5d207d7531170883cbdfda456efc0b54e",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/lekiwi_lerobot/__init__.py": {
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/lekiwi_lerobot/follower_logic.py": {
+      "git_blob": "25a1cc57d1d69e47f344acb17bd5db56f7a20dbe",
+      "sha256": "58b917185d4110949ae6c3898cc3a762e20ea87d03d59020334eee385057c5a7",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/lekiwi_lerobot/lekiwi_follower_arm_node.py": {
+      "git_blob": "d36e630360e91bd21df64ac36b4dcfd152aaa175",
+      "sha256": "77949a2ecd35c539ffe86b7899e1cfd0a5c47716f147ce7efa6858b974dc2b11",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/package.xml": {
+      "git_blob": "16369f12643973ddee5498de53eea7930aaa2f50",
+      "sha256": "87636d9138e5fc75049bf1b31e34b3c8192c968c51c92c8bed230950563844f3",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/resource/lekiwi_lerobot": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/setup.cfg": {
+      "git_blob": "290bd965732b31fc018db0cb5a08cbed8ac77267",
+      "sha256": "d83838a4513c8f5fe7f914f09379a48002ac141834e69b59c717156dbe04ccc0",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/setup.py": {
+      "git_blob": "0e0bdcf5e8d6f4673ef756f32a0e10ee6f7d5cea",
+      "sha256": "0d3bbc79377b2926613e0fc97ce59b5321d648a9f4ca7ec87592b7ca2692f376",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/test/data/lekiwi04.json": {
+      "git_blob": "aa9f75736f2fd3c55369a014c26dec80dc341a6e",
+      "sha256": "2c840df4824652692ac4022e6b0da1bfef35c1d3e867cc05b619bb2156eea3d7",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_lerobot/test/test_follower_logic.py": {
+      "git_blob": "c1fe4ab33802e81ab290d78a9be4c175df1d9658",
+      "sha256": "8429c322396a9215a3c0882aa61c4a3d0ce01031a8902b023a75a109ccabb2a7",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/CMakeLists.txt": {
+      "git_blob": "c90b6a4a8888b30ce32a11f51c7116f6c5b18cde",
+      "sha256": "111fa46f6b437327fe599345991add8223003848b26f1040dac0413cb7f774ae",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/README.md": {
+      "git_blob": "8bf9802a91bf108326eb23af548082dfef87f04c",
+      "sha256": "a485f232217c3d9690c7bc644dd3969e1dd9491dae65cba8b2cf0de1ea8afa11",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/config/lekiwi_base_controller.yaml": {
+      "git_blob": "18a805a4b0a16c21aa3514256b7559e6ce4a9e0b",
+      "sha256": "7a737ffd19732f1ebe7a44a050a8f54727ac175f65e9dcf4b243afd7b7654710",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/include/lekiwi_base_controller/base_controller.hpp": {
+      "git_blob": "391a8f25fddc61a488138b176974d1d4a7e4e501",
+      "sha256": "3aa2e9f85f888205de009d220c1490b8e78ecf8baf373ab5c1e9e17d29114dc7",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/include/lekiwi_base_controller/driver_motor_interface.hpp": {
+      "git_blob": "6e68be51bbdfcfe789c6e646c0f41e907b60e556",
+      "sha256": "c58210d5fda207dd044c21fb75f24fa86ad646dc0dac969f0dc67a21dff3f2e4",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/include/lekiwi_base_controller/lekiwi_base_controller_node.hpp": {
+      "git_blob": "9af6e0176636178e58f4bc4448a7aa3dc9101c3f",
+      "sha256": "6ef32411d6bc7665e9cb18594afb2420979b479216c40d9ba1fff7dafd1f984f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/include/lekiwi_base_controller/motor_readiness.hpp": {
+      "git_blob": "0456edb1233b30cb345bd69f0b85dad47e0dda62",
+      "sha256": "861049386ae1c8acd3275d86dc89dd9bc5888088fac8cb96de10074bcbbb4018",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/include/lekiwi_base_controller/motor_safety_coordinator.hpp": {
+      "git_blob": "8e1109d80bdf74a8268bdf47a6d559a84654b5f0",
+      "sha256": "f9240a9121f010c785a2d7ead51e82dbaa36bb22ab256db84f7c7dcc6f2c6cf2",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/include/lekiwi_base_controller/odometry.hpp": {
+      "git_blob": "d21a5751b5b8e971384f5029bd9a754ccd81e068",
+      "sha256": "71cae0e4ba4d1fc6db895d76b3c6a2bf771aa1169fd580007605e06605344582",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/include/lekiwi_base_controller/omni_kinematics.hpp": {
+      "git_blob": "af4991a9cd5736dae6c99731dae619d6efb03c82",
+      "sha256": "9b03589079c5537e78490b0f3d05e9ab8df838be86f82cf92673ce6ba340f026",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/include/lekiwi_base_controller/wheel_feedback_estimator.hpp": {
+      "git_blob": "0cf67ecd4872f1b70ce9eeae5597d4fdb4fd65eb",
+      "sha256": "f48efab1365895c7b55bf5ac9e822f9aa715407280e3e2f88c69055dc86de9b9",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/launch/lekiwi_base_controller.launch.py": {
+      "git_blob": "05e3d817b4209966b9537a7d47615b572bc79ffa",
+      "sha256": "348bf08e3918ff75f67f94d233eff54aa0715b9186117e6369156c539809acb5",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/package.xml": {
+      "git_blob": "5f340e8783715dbf529213b194bd77e17c3b1bac",
+      "sha256": "bf3b99850c6b359b27ff61d78d17d421654d2a54497987c6cf0fd7da6d4af192",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/base_controller.cpp": {
+      "git_blob": "86b05598b96643689cce824b5bb8fed63dbcf9d3",
+      "sha256": "27e368b223a32695c9a9bb521a9bf66f93d6a5203ee0c22d256c2baa25e9b730",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/driver_motor_interface.cpp": {
+      "git_blob": "ad79978c85704876c76afd1188baf2b03d6ecd67",
+      "sha256": "a7df76a1c0e06be79d439fb0e249e5f4f99a0257d86c9c21d9dfa3627d55cff8",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/lekiwi_base_controller_main.cpp": {
+      "git_blob": "b6ba6e719b21a63217df70030ce644e0dcccf09d",
+      "sha256": "bee28706d0d0b43e2c43d4e974ba78c2fde074cbb7a5900a879dc720f53fdb37",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/lekiwi_base_controller_node.cpp": {
+      "git_blob": "ca8f2122405cba75b6d19f28e956c3e68400c94b",
+      "sha256": "579488584903cc1a4809a4692d6409c8574c91ac39651b87b33834b5e7de1b0c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/motor_readiness.cpp": {
+      "git_blob": "b84e7da1b28bb47b303ec3e299c5a7162c81ff9d",
+      "sha256": "5f840506cc4914b18eea8bab9848b9e66951cf3745f2c29f9271a7c4d9d374ed",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/motor_safety_coordinator.cpp": {
+      "git_blob": "0ae03ad0d35679dee6c38262db20a6e04864d960",
+      "sha256": "d8e7c1f929b4733242b357437f6f8df6005d5e2b28f756481b3eb2c4c1f04b6c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/odometry.cpp": {
+      "git_blob": "ad59501c2365a61984246524ab2148896c1b0408",
+      "sha256": "55499820c80d2525ed6411c25b07aa895a5e25c7f21962ab59c584581c873bdb",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/omni_kinematics.cpp": {
+      "git_blob": "fad0463cdfde3f31eda83d53eca6afb41f61db04",
+      "sha256": "79f3cbbc2bd96e5ecf37aff2b4fabb7918a0e1521a15f77dd9cf690ae3ff68e5",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/src/wheel_feedback_estimator.cpp": {
+      "git_blob": "df9625cda2d311fb1fa7268c4f7f4690615f93b8",
+      "sha256": "77539e2e681a1eea427f52d1e2c4cd9a8a080c3b5214a54fb863c02d7a5e2295",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/test/test_base_motor_interface_contract.cpp": {
+      "git_blob": "120f79e1475fbae99f29d2317419294c42fb7d70",
+      "sha256": "42df23bf428984be054d58a788b9dc3a01457f3ccd94fc3698b9131e34eda977",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/test/test_base_node_smoke.cpp": {
+      "git_blob": "15f9c202dad5b15ecd9d2dbf4e958098e473aadb",
+      "sha256": "532022f81066b4837168dad040c7dbb08420de542d270b1529b40b45ef9e1fab",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/test/test_driver_integration.cpp": {
+      "git_blob": "90afe8d2ba8911e8b00925aa138c329d54e11934",
+      "sha256": "0645f2e8e177c74075a7b87f69e792d5083fad41966e5ae037ecb3c12940e90e",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/test/test_motor_readiness.cpp": {
+      "git_blob": "267e2529ccbbee4d5c447a5c6eb30e177310cb0b",
+      "sha256": "1143bc81fcf05a7381e7c4fcfe19c5c8c7d5728ee1eaed83e7375ec392137a94",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/test/test_motor_safety_coordinator.cpp": {
+      "git_blob": "cd919a20ff160152d32680b2995dce7bbe4f7e8b",
+      "sha256": "30d9a28e18f7ca1e85bf12aaebfa0bf2ae20b4fa9ef40ddabbecb91ddb1c5e15",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/test/test_omni_kinematics.cpp": {
+      "git_blob": "485b61839b328e91941f5db1caa544ffc3ebc9a1",
+      "sha256": "b539cb6377ef070a0f3299bff2402d5b1e54ff43af73ada0701856be3307c3af",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_base_controller/test/test_wheel_feedback_estimator.cpp": {
+      "git_blob": "2233b814fc37a7ebcaef74a6a99a51c871d3419b",
+      "sha256": "4a6cd4be7ea1f070c33198138c5be3e692afcdd72db308be91e5516f5d3f7db1",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/CMakeLists.txt": {
+      "git_blob": "6d0c722593534715fc7d0a0fad066d113ea416b6",
+      "sha256": "33e1760156bcb2c88f325f34e40f0e64404019d1a57bb1a84f59ccf4af98159f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/README.md": {
+      "git_blob": "11ccb0173399f7b93b568969cb6aea15c77ba889",
+      "sha256": "c0d34ee1d7aaba340c3f993624c1b013158f122599de5e96ad4e1a396f6a2343",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/config/lekiwi_motor_driver.yaml": {
+      "git_blob": "0d6526a3f4bf2c5007eeda638c11d1718c356076",
+      "sha256": "fa894fee4abf9bdb848eedbfa1ec8455095558aa354dab275fc6c4865cfe8909",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/include/lekiwi_motor_driver/feetech_bus.hpp": {
+      "git_blob": "27640a372748b7051cbfea3f989583e52221734a",
+      "sha256": "c04bfc6658463fa7879627d9e23e48b30a23611ca6a4869d95bb7758153ca0a6",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/include/lekiwi_motor_driver/lekiwi_motor_driver_node.hpp": {
+      "git_blob": "774691aab7a961803759722ac980af47431847ac",
+      "sha256": "83d7c30c9c3f0db3f55bc9b6113de6097eafc6cdb4f80b709844bc2474746eef",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/include/lekiwi_motor_driver/sts3215.hpp": {
+      "git_blob": "222292b066b510f453e0388e5241850166a4d48c",
+      "sha256": "64b284135a51c243e46fa7e2a0b810c4a3dd8a079db526b4ad77f9b5726d8b2f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/launch/lekiwi_motor_driver.launch.py": {
+      "git_blob": "c9df3bcb9855de803ec902e585c132caae1cb912",
+      "sha256": "2d9e8db828eadfa15c444dadf9b607ef3449ad964e47ff636b6b9d3b2b8c756b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/package.xml": {
+      "git_blob": "2ac1f8e6b338d9f52a33cd113375bc098e719e5a",
+      "sha256": "7b89fa0b6fcc903a4e2d1adbdd26746fb78278a7b1f2af70568fc851197356ca",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/src/feetech_bus.cpp": {
+      "git_blob": "69adf31597a3204b2ab0345ce33f2f96a0ce7d60",
+      "sha256": "78a79eb7773690431a7af83fc93e87c305d2dfad960d65a92b00eaffdbd8eca2",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/src/lekiwi_motor_driver_node.cpp": {
+      "git_blob": "9de9268e44789a6ea6792f82538be29e831a2888",
+      "sha256": "2ec90cd99cd2403d7800e8f1e2313be3f55d6c53bea00f6a02fb70ffeab99fe5",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/test/fake_sts_bus.py": {
+      "git_blob": "ceb82452d125c51703d9dd1b97174441c3a843b7",
+      "sha256": "839163cdfb5696f744270070e96068f88ebe97826ec1d7344ba1da1a2941680e",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/test/test_feetech_protocol.cpp": {
+      "git_blob": "e2cd975a390a85bf3dfd78ccbe5ec07ea3616d56",
+      "sha256": "8af7df4f5fdc7e6dc781ea562c5b3a880c5d1a358b3f661d0865e3ec1fc624bc",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_motor/lekiwi_motor_driver/test/test_wheel_write_pty.py": {
+      "git_blob": "71bc0d30af07b0c4759e62ab08ff95d6050181f2",
+      "sha256": "d9420b42cfcb6f3bf778a8a79719d33f0b7d069870e3672f82b68059434577bf",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/CMakeLists.txt": {
+      "git_blob": "19deb505f3a260a110ddcd385197e41c5ea2f85a",
+      "sha256": "56ebc1086531a5ee29ec075c204263898db89dcc1da83e30565bc7062549caec",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/README.md": {
+      "git_blob": "165456a95225e6ea29c3645164be593d642610c6",
+      "sha256": "84d464687c8d9c013cff3836860090f53cfdba3d203ab4f250e1c23f902fa283",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/msg/ArmCommand.msg": {
+      "git_blob": "f8d8c3fc40a8032b5e04d282d8328b12962846a7",
+      "sha256": "7c0483b1d2f74fd027fc01b596e289f018d4946876b5635a9a002f955dd847bf",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/msg/ArmRegisters.msg": {
+      "git_blob": "bdf348273e35d50090f07c00b89987f5a52bc87a",
+      "sha256": "0d3df9e1e1a2f865837e3c27f3a9d8df927d6f78f1720c0461d2dbd6b4096c30",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/msg/LerobotState.msg": {
+      "git_blob": "4097d6d727d61c7853434bddf3cae8466d9238f6",
+      "sha256": "190e4a569dfdcefc1206c03b6823d21e1d5dcc47145eca034b582c53100b6ad0",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/msg/MotorState.msg": {
+      "git_blob": "643a70406cc64cfdaebee7959576ac441d3fb892",
+      "sha256": "7b7bc67c53d308df06bc574c77390389dce3e4c75ee68fe5c3a424c219516dc2",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/msg/MotorStateArray.msg": {
+      "git_blob": "7bfdf937a11519ef622cd3816887fa9707405350",
+      "sha256": "fcf29b6dbc2bb404dd5ebeea0962288d3f5f8bcf9019599ab427a8ba91f01d1b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/msg/WheelCommand.msg": {
+      "git_blob": "f807791e35190962387bee28073077408faaf569",
+      "sha256": "2204f243fe0231ecaea622c37d3694c05e8af121dea6773c405d598b3f9ba651",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_msgs/package.xml": {
+      "git_blob": "44f2fcecb3399e5bd0bb4e4ec3bded7420c4b9db",
+      "sha256": "a1d82ff43519a63d784f296ef20f49463d964c16fc50480c14f32c769957d88f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_navigation2/CMakeLists.txt": {
+      "git_blob": "83059e4d24a9947c75625d70c594b62a5803ecc6",
+      "sha256": "3b872ce1a01e211523e4a796580509a091bc35917a4dba82021d05239763073e",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_navigation2/README.md": {
+      "git_blob": "93c6bdd7e463171d15e39f9cfd0a0cc31df8482d",
+      "sha256": "ed518b8a172b1cec50d2745af6b4cc323b0fc1769e1ed93887c359179d4a638f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_navigation2/config/nav2_params.yaml": {
+      "git_blob": "5b3234e4dad3c07b15ec509307ca2c7eccbf424d",
+      "sha256": "07cecddbab0e241d8317d59ae952eae678c13be556e8ad721e1feb59c23bb542",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_navigation2/launch/navigation.launch.py": {
+      "git_blob": "84cdc4519a67d19ead5e4982e1ab2bc845e93b2b",
+      "sha256": "15b637509935e22a2b3bfffcb2ae519e90b35e66fa1f7581fd8edeeeb477c110",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_navigation2/package.xml": {
+      "git_blob": "ecff7b11b68c13e18ed23cced37a84a5d5c891ca",
+      "sha256": "45f1533b9aa20a57229df7e8babdb3fd09cda35fc626aec8fd55e306bbe41f53",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_navigation2/rviz/nav2.rviz": {
+      "git_blob": "a01c24babfae0f67cff7cdd5fa96074975fad57b",
+      "sha256": "c625bb05f02d77fff4a2c0aa0c143190e46f5a56f996625fff6c541f7a902363",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_navigation2/test/test_navigation_contract.py": {
+      "git_blob": "181920f906b7e0788fe4f20df3f513de90a9e147",
+      "sha256": "6bff188715dd8cbfaaced179b90783225ecc0f351fa6cdd65be24732a5716c9b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/CMakeLists.txt": {
+      "git_blob": "030fdc8b48143665d7ee71697e88c82c0bbc1305",
+      "sha256": "9359e9d6247f69daadb8b7722310b4d993508856081bc4ba12829219d995bf97",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/README.md": {
+      "git_blob": "b98ad74adeee72049a47e771d3cf281dbf0ced85",
+      "sha256": "b359bbfcb9b97a4cecf032cd9f7bfb66d980dcf62207f8b47721c2328f7111c9",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/config/lekiwi_camera.yaml": {
+      "git_blob": "7bcf739159ee7c2e14e9fb631ac11734808a7c46",
+      "sha256": "dc2b9326d5d1b2ecc99e81360c67fd1a4e810e10b71cee26a8558cc0d60a86d5",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/include/lekiwi_camera/lekiwi_camera_node.hpp": {
+      "git_blob": "d37e4906538c77cbaf6dc0a9d6d2e06d32423919",
+      "sha256": "263a85e40e033d59aefbdfc4bc4b18cb965461e23ca817f8f50e29fb83051a92",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/include/lekiwi_camera/v4l2_capture.hpp": {
+      "git_blob": "697d9a962821370f66c450f0050bed481dbfa93f",
+      "sha256": "94e7593027f574fe5ddde2fd1a876dea4db46488acd2ba3e7ca027f0c0e594ba",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/launch/lekiwi_camera.launch.py": {
+      "git_blob": "f46ee66c16d83ffc747fe025d2e7805a3ba77e2b",
+      "sha256": "3add867f3d6b0579514241fb97e4d8bf91fc577583904cf291b70c7fae6117f8",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/package.xml": {
+      "git_blob": "f6b6b6e5431acb926493d15ff58a42a8d08b7ef6",
+      "sha256": "59101dc5efb3b94b0bd1ec5341479832d3ca9c4b601675542378a1ee15c87488",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/src/lekiwi_camera_node.cpp": {
+      "git_blob": "a56e55856266f7aef4b2aeb95a8845f34906931a",
+      "sha256": "386fdc3c26077c5c017449c3d39af69cc37dcd8be4d07febdcdc0a7721e87607",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_camera/src/v4l2_capture.cpp": {
+      "git_blob": "d3d652770671da06addc7e3d97216a9ff693d9d8",
+      "sha256": "861c62169886a9303c7077434bf8ea7cc96c067cbc8e70896d709c8fa6c54667",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/CMakeLists.txt": {
+      "git_blob": "d60ec3774fecffd04e8f31928a9a08ca163e73bc",
+      "sha256": "ec3a9aaa2c26bfaa4d941fbca47e63729a4bf9e65ad058ad0af751d01407ba7d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/README.md": {
+      "git_blob": "fdb5e7e5ebae43fce22df7ad9cb99b7738ba6838",
+      "sha256": "85bd7448e243bf193ae2db41426575dcc5cd22ba1773b02fae33da1922cc7ca3",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/config/lekiwi_imu.yaml": {
+      "git_blob": "3e9b9f2b1a604927ce03e1bbb1c3f305df3f6f8a",
+      "sha256": "1305389bc079ee8b5f9bca3292305b087646db863b83354349e828d07433f8e6",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/include/lekiwi_imu/bmi160_driver.hpp": {
+      "git_blob": "b154c2f0115d89c9e5b802a19d6c5dce6fb42e8b",
+      "sha256": "37b6b1ffc458e2bb769f35a23ee2fcb7858ba12f19d2e3235ddf59e92360ca9c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/include/lekiwi_imu/imu_math.hpp": {
+      "git_blob": "6efb84c8a8d0ac4db2ac12bf24df442b97b94481",
+      "sha256": "d0fe84b630caea163f55102bcdeeadc81486a12a474a85968a497939ce01acad",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/include/lekiwi_imu/kalman_filter.hpp": {
+      "git_blob": "2baa5138a0473d97807ade2d5b056b859ae59a72",
+      "sha256": "f7d99b1d81fbf95d5aa9c193bf65ff20c390f953ac338470354c31649bf38638",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/include/lekiwi_imu/lekiwi_imu_node.hpp": {
+      "git_blob": "9e3d8c382598751fa6880d0759275d6cb4f2c197",
+      "sha256": "2be1a7bed5076b4c05a7aa364e9d47466956334443487104c888cd9c9c54c9dc",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/include/lekiwi_imu/low_pass_filter.hpp": {
+      "git_blob": "2e3884811b743d8616d68ccdb06fd61648b68a41",
+      "sha256": "47801e33a130523ff12dd98306c13ad8b20df3d8cdad659dd679e4fb35e128a0",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/include/lekiwi_imu/one_euro_filter.hpp": {
+      "git_blob": "55289cfb4bf8de8120c0d2158376df0fe5a9ff1a",
+      "sha256": "a28f8330a0f84feb001cdccfedfec799aba5a50753dbd626c998adad0095a347",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/launch/lekiwi_imu.launch.py": {
+      "git_blob": "cb140c07b41c6bf32b2d375c1e1d6bd2a4a79b0e",
+      "sha256": "d49e2bc162603b7df2391f8adf54a04fdc95fcc9f4aead43151731b607fc576f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/package.xml": {
+      "git_blob": "615019ec3a83167da43ac74cd241222afde59fa0",
+      "sha256": "fa270f188d1f2fe5cb76c94a6413fb04e1d029890530134e1f27b3e94f87f331",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/src/bmi160_driver.cpp": {
+      "git_blob": "cdd48e7bd820482088cde2783e64e9accab5eeac",
+      "sha256": "a2849796591c145abc212d8c3b2a510b5654563c5d3eceb8f6e99932b674db41",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/src/kalman_filter.cpp": {
+      "git_blob": "2d10bfa770361d8d0cd9da9bc16065cc71f21a5e",
+      "sha256": "4f0204af6d46ada99b17fb42d2d814814a3c6fde64ff6d0208228cd1f79d0918",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/src/lekiwi_imu_node.cpp": {
+      "git_blob": "a9378744900e556dd2d47bf88f1e71c312feae94",
+      "sha256": "54d9617fbefebe19394886532395eae537be700ff0ddfc564e3f484e8d3bf10d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/src/low_pass_filter.cpp": {
+      "git_blob": "58d696c01a04bc0643db6d3b8451e72866888186",
+      "sha256": "17ee4e228125b362744c4b8e9932332d5bc341841aef31c0d848124015012496",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/src/one_euro_filter.cpp": {
+      "git_blob": "4a5ee60aca9fb941a54d5f5a8ebff872f89437ec",
+      "sha256": "a0a0be2a4b30cf0b34ba65767af190995156f4ca8ee455e8e334ae666a1c5ab6",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_imu/test/test_filters.cpp": {
+      "git_blob": "b4833e279df709f760ddf7be7d47854b508a5908",
+      "sha256": "bb3e9547a4505c181486f44f12450eb23e75e1f471f8701a2dace2998e4899db",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/CMakeLists.txt": {
+      "git_blob": "bd44d19ce57b868fc5aff22980038e7612184b97",
+      "sha256": "8e93f3ac235b2c5c309ab0725cfc8ef6c825b0a210894142ac0d9e0f40562449",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/README.md": {
+      "git_blob": "fe443b8b557dc2368a3b89cf7ffe92ad9ec0d675",
+      "sha256": "bdd73cb9d205aba2f114a84527e0c53684e0d96c5a0225b156d1b23aaf39fcc1",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/config/lekiwi_lidar.yaml": {
+      "git_blob": "da392186091089a28d305e3fa0045fecba5f3717",
+      "sha256": "915367ff85cabf31fbd3ae75934d36458f45bd76aa374e1c021f66797ed993e3",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/include/lekiwi_lidar/lekiwi_lidar_node.hpp": {
+      "git_blob": "30a349a98f905ec599a150448128be3a7f7f3068",
+      "sha256": "c650d1ea50884293da59de68caace6ff529a2648fa937cf1a1569b4cd1b62426",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/include/lekiwi_lidar/ydlidar_driver.hpp": {
+      "git_blob": "0e747adafd1a9082d25239ea937bda3bc88b6b0d",
+      "sha256": "784787d1cace9e702a798d05c6adc10a792b874cfa87a0b80e096eee6fd30fa9",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/launch/lekiwi_lidar.launch.py": {
+      "git_blob": "5986b2bc9398bf234754a4452a7fca5974d34cae",
+      "sha256": "81f2d14a02512185c16001b1ef72eae5004ebea75cce3480035eb791497f807a",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/package.xml": {
+      "git_blob": "a1831cae0dc8defa30ea6cd86ddaf2509739323d",
+      "sha256": "ff79376d5463fa0ea9309cd1c03f9a51f89f7cf5c1aa56a85836a468a2f47fe9",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/src/lekiwi_lidar_node.cpp": {
+      "git_blob": "c8abc4e171150fa271b2636b080a455e71448e61",
+      "sha256": "ed361d9d4b6207ebf53a27c3f766c6a88225ff9d129ce07e18c291813da2f306",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_lidar/src/ydlidar_driver.cpp": {
+      "git_blob": "879e09ee78c0053ed11beaff11dc375e734fc6a8",
+      "sha256": "566105039f532072376497f6748c50d57ee1bf49c180f6629ea30baad331af97",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/CMakeLists.txt": {
+      "git_blob": "c4d140bf94b589a93b679033bbeae8ff3e0417a8",
+      "sha256": "2d44e97adc9dc6519ede2123d90607e18987b84de8e546974f84cba87306e12b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/README.md": {
+      "git_blob": "e8873c3c11c44a8d66c885bbc4f901a5024e9b81",
+      "sha256": "d04b41ee5bd96c2a32efdcd5fbcd5376726ee31ed281ed347509d7956b7e52ed",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/config/lekiwi_scan_filter.yaml": {
+      "git_blob": "b3de4103a68c729fa734d7bb301b6a7356d885eb",
+      "sha256": "66e6e3fa2924a2c381c13ac0a0131e0825e16b3843723d06f1ea35aa19bf30dc",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/include/lekiwi_scan_filter/lekiwi_scan_filter_node.hpp": {
+      "git_blob": "12f1186c1aaf109ce8062659f1b90554485f289d",
+      "sha256": "3111a2ab1351739f335cc756e985ed4ac0d61a8f9780dcca630141282916996b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/include/lekiwi_scan_filter/scan_filter.hpp": {
+      "git_blob": "ab4f2dce5667897fa0b4ab0cb1ecc7934a7185c9",
+      "sha256": "95ea85e8f825beabd7c13a24981859defe7a840b3b562679bf905a1fe37e67d1",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/launch/lekiwi_scan_filter.launch.py": {
+      "git_blob": "7b07176e2f330c16852ffa76f0b43964694a1111",
+      "sha256": "c127d287cf0e81e48d5135cf548119a6cc742fc05bbeeb98ec71a168329b57fb",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/package.xml": {
+      "git_blob": "75a72392f7ec3265d4167867bedd55f63eef0557",
+      "sha256": "db59d08a6e40f85d95bf39624ec7e0ddee950875819f5699f9bac2f6d87f42e9",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/src/lekiwi_scan_filter_node.cpp": {
+      "git_blob": "a5e634155af183f6c399d34611a7129163cf7188",
+      "sha256": "96679a88509e1611397e983683403b3446ff75bc282d80ea8585f0652470dfc4",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/src/scan_filter.cpp": {
+      "git_blob": "4dec370954efcf63dc5d1f7dfedcefe4ea2c0903",
+      "sha256": "5e622ddf077dbe0127244c78d2c9ae5eee4456e240cc8207344be806751a88c6",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_sensor/lekiwi_scan_filter/test/test_scan_filter.cpp": {
+      "git_blob": "63d85e71902f5a0cbcaaaf6163620ec690f9cdc7",
+      "sha256": "8f8fe1d9f514a49c30cdf2224dbebe55f6a3303fc439c69b4c7460d8143b55f6",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/README.md": {
+      "git_blob": "383bb1ba60c53f66d3e5e7d4cff3d116e9df61e6",
+      "sha256": "ad075912bb5b74957d22a7ab39094a23356b36b4a6d1d84ba42f39cf63802d94",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/__init__.py": {
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/base_teleop.py": {
+      "git_blob": "e83b865d4e44d23415fe67429d15cdea3ac68c85",
+      "sha256": "0f48558da57f2e99c83bd56fc8e21dbef213b1602779e855dab4128ba6554b3a",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/distance_trial.py": {
+      "git_blob": "f06cca7fcaa4c8575cf09ce6fd7fb34e690840d1",
+      "sha256": "db9320122387315ccfaef6a1dc7304d57c5368bfcf0479020a3ac4633cc1cd55",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/distance_trial_ros.py": {
+      "git_blob": "858191060eb61fef640f704db1494cdca60c65b1",
+      "sha256": "9116ad87600aac7ecdb0a7b67e08d31f697df3fc3c35b6cdaf5c3e9d9225ae84",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/guarded_base_teleop.py": {
+      "git_blob": "62c4c5c47b20cd3a4060474bf3ab71757980a5ac",
+      "sha256": "d0f4d846015609a7bac2cbbaa7060e6bc926accd2c641906f91b7b99e4b63dd4",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/interface_names.py": {
+      "git_blob": "41d5e6371de8f14f1e19c81012b4bbd778f8940d",
+      "sha256": "39a7b2f35ecaebbcaa9b88e3c9f34c7200a245474f851325800a0fb6dc85f4dd",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/keyboard_teleop.py": {
+      "git_blob": "0b2ee92b1acbcfa75bafbc7fd04082fd03c2b609",
+      "sha256": "5d4660510630f44599b332653c00509b38f0ba07ff78bc023260f1cb32f3447d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/motor_session.py": {
+      "git_blob": "587efd36bf7971bfce485bbb530a8557cdff7715",
+      "sha256": "a8c7a3524183b38bcb676562190728d4f45fb83f46b8e1da6153727f46922289",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/nav2_motor_guard.py": {
+      "git_blob": "4f4620b50bd7f725aed1b545383af7378a7d4179",
+      "sha256": "9e4a17a2fa314c7063c96ba343c77d30773778ded91820b6c37864b463d332de",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/odom_calibration.py": {
+      "git_blob": "748ed7240cb3a9d2232c44114c99631033ef86a3",
+      "sha256": "8cbd1bcf727a1a125f37c6d13f2db69501eea477f92d8609b6d4bc93fa36daca",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/safe_cmd_vel.py": {
+      "git_blob": "11d48eabdff1a1d1193d0be656fb9478083baa6b",
+      "sha256": "fd50d5db38653bff38b06231422cd5e2e1867ff302d01cf6ced4776ad803b90f",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/lekiwi_teleop/terminal_teleop.py": {
+      "git_blob": "e064591e5c59808e8176fa2f063c5f25caddc2fe",
+      "sha256": "d9fa6aaa1ffd2f647359a555b4339286a98da757882d05e61c5c1f99ec6b66ab",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/package.xml": {
+      "git_blob": "4f51e3af58a15b800b347720a29a4d5d1bff15f8",
+      "sha256": "c3ab436549593b076070d28eff002dcbc8049bc5d015e111c1fc52a868f409e9",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/resource/lekiwi_teleop": {
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/setup.cfg": {
+      "git_blob": "dedff4b53cc0aa136a6c7d476515ad90e6e17412",
+      "sha256": "2ff0d6a42d4791fdb2dfe81fa0df97e851d1637ca2409702989514ae080e5fe4",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/setup.py": {
+      "git_blob": "9e93ec05353028279e67a1cac2f1d63c1e9600ce",
+      "sha256": "cc4cc8925a6c695a87cad5d081acb5ab115ddd373456c7ddb2182324df9153df",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/__init__.py": {
+      "git_blob": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_base_teleop_mapping.py": {
+      "git_blob": "1309fad821d62e44e6d58caae18564dd1ece6b47",
+      "sha256": "090cdca3f347bfbab9c99a0377d5d5e6976852bbc716cb3203de24e6b93d2e9b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_distance_trial.py": {
+      "git_blob": "e38791362dd15fa103e3192bda5df4b452004166",
+      "sha256": "c267508c3fd14929729015f21f702fc81c9fa4d832885576aa498017afbd5729",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_distance_trial_ros.py": {
+      "git_blob": "349f6d9abbf25415461b2bf5852ec893d2cde803",
+      "sha256": "a73b3f30024e8906172b248d5d78096e77879b4b8e48a8c645032a9ad1ccfa1b",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_guarded_base_teleop.py": {
+      "git_blob": "54d9dce8d7efe830e6b5f3b952ccf6b848fa6777",
+      "sha256": "b0ad9f2e053805300b45aafc34efc49724ebccaa173df19846838d9b9cada7b8",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_hold_to_move_teleop.py": {
+      "git_blob": "72e4268ff954ed2cb4d0483b20bff9b3e95452f0",
+      "sha256": "33a7ddb0d06a94f515201ced1d0da3309b4055f4393dc255342b0a5816899bba",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_keyboard_teleop.py": {
+      "git_blob": "1e7f7ffd4bce9873ace1729db8568e8dcc799dc5",
+      "sha256": "1b2a733c739dc472fe79f3ba3be0f245c2222eb226137d7062efdfa129b6f12d",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_motor_session.py": {
+      "git_blob": "361c6f1365ddde333aa48bdcb12fde73c481329a",
+      "sha256": "b8fee773b2da00e4b50ab9ab87f676aafeaaca4874640a701a55556d2a00001c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_nav2_motor_guard.py": {
+      "git_blob": "bc180ef95b33bbf5e8da26b6c33fb1e8289e1331",
+      "sha256": "8496dcb864be6e09eec7f832a309360bc17f155cfa7083942d8d1f3e048eeb36",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_odom_calibration.py": {
+      "git_blob": "1b0bb2db8a5a608dff78fcda5a37cec241793eda",
+      "sha256": "1a77a308e15bb2dc3bd926c8d93456d6058ee17f2dc52d8bb1c3a9325d319974",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_safe_cmd_vel.py": {
+      "git_blob": "da58f4d9ff3b788699311395311f02d47afd89dd",
+      "sha256": "209676eaa63e804e257877d96d4568a59de5ff1e878016849bf5716f2299f370",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_teleop/test/test_terminal_teleop.py": {
+      "git_blob": "2c964e3a857eb00131cd6fe0751d41da96c08669",
+      "sha256": "8d5e598186bb63adf63b416df9316f751c86ff282e3a8bc3d5f288ae4cf0d83a",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/README.md": {
+      "git_blob": "7f5b89f9fa0409e530de812703ba2e3ee4070e00",
+      "sha256": "6603eb413433dfdea44ba9471b0e70430633a9676ec066971d4049ab76e29a22",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/config/lekiwi_zmq_host.yaml": {
+      "git_blob": "4a94ff3b6b80037618862222b4281f629d8097b5",
+      "sha256": "f49c360fd7e17fce41ba1dcc944b9092373e1c0a6cc1a8894cabadb206bd20aa",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/lekiwi_zmq_host/__init__.py": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/lekiwi_zmq_host/kinematics.py": {
+      "git_blob": "29fc8ed0ee869d895409b734baebe916ff0c6962",
+      "sha256": "e3ab68893e7f1e6c8dd0739cc9212f75adeceff45ff971ef163ef70ce7bb125c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/lekiwi_zmq_host/node.py": {
+      "git_blob": "87c7d6b47a68b1794171141fdf261d7741377f5e",
+      "sha256": "b40192b15ae60905deca84f7c4eaf548844e0e8a1d0638a28e91ae82984176ce",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/lekiwi_zmq_host/protocol.py": {
+      "git_blob": "5f3d95cc2ec180d091a82b04551306e3056ce2e4",
+      "sha256": "46b535ca36d8faee0fd895d2b64ee862b41bff4cf5f4a82cd2701a4b7b5a3b2c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/lekiwi_zmq_host/session.py": {
+      "git_blob": "c44adfb872dacb504e9eb6606fa0dce230834936",
+      "sha256": "0c2ed8eb98044ee3893c7d8d6e13deeaf91ca955647b63a3ca5a667a67884a6a",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/package.xml": {
+      "git_blob": "7d3242882c28ea0b3a272ea38bc557399e33a1d8",
+      "sha256": "f29e1a8c4fd8e56850fbb8d3004fe52d88b7fc5157f761d673331af786814cbe",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/resource/lekiwi_zmq_host": {
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/setup.cfg": {
+      "git_blob": "c9f72d2600e1fef5b99c74ce1ca6c8d2b012e2de",
+      "sha256": "ca95ad4dc8a237169d85bcac1b2dab84586c78e944fc1fe8308eaac69e34979c",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/setup.py": {
+      "git_blob": "54864d63563cf837a774b0c1a44f88cf25600f39",
+      "sha256": "5e5d884fb34c08ab2979e7e0195fb815b0218a66336e34618f6dffe5138be18e",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/test/conftest.py": {
+      "git_blob": "a07405c4724bbf8d6050bb8fea510768364e8c28",
+      "sha256": "5a8a17b323dc5c7702604c72fdcc505060ecfc4bdd766cdef55b1bedd633dc26",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/test/test_kinematics.py": {
+      "git_blob": "14fb0c94cc8f500ff86388f54da5b2df740f1338",
+      "sha256": "03723fbf0a446fb551b5b08c05bd190ec50b2972cb0943091927993d7c6999c0",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/test/test_node_ros.py": {
+      "git_blob": "e6a20ba345c6ff047b1cf5518e59642ac3e90bc2",
+      "sha256": "d7c7c9efde95e2c21e67d7954465d26d9882c48602c8bdf0ff6dd72f738b678e",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/test/test_protocol.py": {
+      "git_blob": "3ba0fd8fde8ba70b2a6ec9a63fd685482198309e",
+      "sha256": "587d2fad692c1f969baeffca57945fef2e76b18c3892a55e816a65c01d2a52c5",
+      "mode": "100644"
+    },
+    "lekiwi_ws/src/lekiwi_zmq_host/test/test_session.py": {
+      "git_blob": "bc99a1059b875ed49e39fa0c4beb3393893f2b73",
+      "sha256": "c6cc5d3c3936d34eb03d9dd9c6f3e6cc6f8d50b78b8391fcf9dd0bc93e9ee887",
+      "mode": "100644"
+    }
+  }
+}
